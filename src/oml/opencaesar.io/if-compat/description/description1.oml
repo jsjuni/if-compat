@@ -4,19 +4,22 @@
 description <http://opencaesar.io/if-compat/description/description1#> as description1 {
 	
 	uses <http://purl.org/dc/elements/1.1/> as dc
+	uses <http://www.w3.org/2001/XMLSchema#> as xsd
 
 	uses <http://opencaesar.io/if-compat/vocabulary/vocabulary1#> as vocabulary1
 
-	// Example concept instance
-	instance c1 : vocabulary1:C
-	
-	// Example concept instance
-	instance c2 : vocabulary1:C
-	
-	// Example relation instance
-	relation instance r1 : vocabulary1:R [
-		from c1
-		to c2
+	instance if1 : vocabulary1:ModuleProviderInterface [
+		vocabulary1:hasInterfaceType "Type 1"
+		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "0"^^xsd:nonNegativeInteger
 	]
-
+	
+	instance if2 : vocabulary1:ModuleProviderInterface [
+		vocabulary1:hasInterfaceType "Type 1"
+		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "0"^^xsd:nonNegativeInteger
+	]
+	
 }

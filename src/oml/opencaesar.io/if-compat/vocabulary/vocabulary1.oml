@@ -4,18 +4,108 @@
 vocabulary <http://opencaesar.io/if-compat/vocabulary/vocabulary1#> as vocabulary1 {
 	
 	extends <http://purl.org/dc/elements/1.1/> as dc
+	extends <http://www.w3.org/2001/XMLSchema#> as xsd
+	extends <http://www.w3.org/2003/11/swrlb#> as swrlb
 	
-	// Example aspect
-	aspect A
+	extends <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+	
+	aspect Versioned
 
-	// Example concept
-	concept C < A
-
-	// Example relation entity
-	relation entity R [
-		from C
-		to A
-		forward r
+	scalar property hasMajorVersion [
+		domain Versioned
+		range xsd:nonNegativeInteger
+		functional
 	]
-
+	
+	scalar property hasMinorVersion [
+		domain Versioned
+		range xsd:nonNegativeInteger
+		functional
+	]
+	
+	scalar property hasPatchVersion [
+		domain Versioned
+		range xsd:nonNegativeInteger
+		functional
+	]
+	
+	relation entity IsCompatibleWith [
+		from Versioned
+		to Versioned
+		forward isCompatibleWith
+		symmetric
+	]
+	
+	ref concept mission:Component < Versioned [
+		restricts all isCompatibleWith to mission:Component
+	]
+	
+	concept Platform < mission:Component
+	
+	concept Module < mission:Component
+	
+	ref concept mission:Interface < Versioned [
+		restricts all isCompatibleWith to mission:Interface
+	]
+	
+	scalar property hasInterfaceType [
+		domain mission:Interface
+		range xsd:string
+		functional
+	]
+	
+	relation entity IsTypeCompatibleWith [
+		from mission:Interface
+		to mission:Interface
+		forward isTypeCompatibleWith
+		symmetric
+		irreflexive
+	]
+	
+	concept ProviderInterface < mission:Interface
+	concept ConsumerInterface < mission:Interface
+	
+	concept PlatformProviderInterface < ProviderInterface [
+		restricts all mission:isPresentedBy to Platform
+	]
+	
+	concept PlatformConsumerInterface < ConsumerInterface [
+		restricts all mission:isPresentedBy to Module
+	]
+	
+	concept ModuleProviderInterface < ProviderInterface [
+		restricts all mission:isPresentedBy to Module
+	]
+	
+	concept ModuleConsumerInterface < ProviderInterface [
+		restricts all mission:isPresentedBy to Module
+	]
+	
+	rule TypeCompatibleInterfaces [
+		ProviderInterface(pi) & hasInterfaceType(pi, it) & 
+		ConsumerInterface(ci) & hasInterfaceType(pi, it)
+		->
+		isTypeCompatibleWith(pi, ci)
+	]
+	
+	rule InterfacesWithCompatiblePatchVersions [
+		isTypeCompatibleWith(pi, ci) &
+		hasMajorVersion(pi, ma) & hasMajorVersion(ci, ma) &
+		hasMinorVersion(pi, mi) & hasMinorVersion(ci, mi) &
+		hasPatchVersion(pi, pp) & hasPatchVersion(ci, cp) &
+		builtIn(swrlb:lessThan, cp, pp)
+		->
+		isCompatibleWith(pi, ci)
+	]
+	
+	rule InterfacesWithCompatibleMinorVersions [
+		isTypeCompatibleWith(pi, ci) &
+		hasMajorVersion(pi, ma) & hasMajorVersion(ci, ma) &
+		hasMinorVersion(pi, pm) & hasMinorVersion(ci, cm) &
+		builtIn(swrlb:lessThan, cm, pm)
+		->
+		isCompatibleWith(pi, ci)
+	]
+	
 }
+
