@@ -77,13 +77,13 @@ vocabulary <http://opencaesar.io/if-compat/vocabulary/vocabulary1#> as vocabular
 		restricts all mission:isPresentedBy to Module
 	]
 	
-	concept ModuleConsumerInterface < ProviderInterface [
+	concept ModuleConsumerInterface < ConsumerInterface [
 		restricts all mission:isPresentedBy to Module
 	]
 	
 	rule TypeCompatibleInterfaces [
 		ProviderInterface(pi) & hasInterfaceType(pi, it) & 
-		ConsumerInterface(ci) & hasInterfaceType(pi, it)
+		ConsumerInterface(ci) & hasInterfaceType(ci, it)
 		->
 		isTypeCompatibleWith(pi, ci)
 	]
@@ -93,7 +93,7 @@ vocabulary <http://opencaesar.io/if-compat/vocabulary/vocabulary1#> as vocabular
 		hasMajorVersion(pi, ma) & hasMajorVersion(ci, ma) &
 		hasMinorVersion(pi, mi) & hasMinorVersion(ci, mi) &
 		hasPatchVersion(pi, pp) & hasPatchVersion(ci, cp) &
-		builtIn(swrlb:lessThan, cp, pp)
+		builtIn(swrlb:lessThanOrEqual, cp, pp)
 		->
 		isCompatibleWith(pi, ci)
 	]
@@ -102,7 +102,7 @@ vocabulary <http://opencaesar.io/if-compat/vocabulary/vocabulary1#> as vocabular
 		isTypeCompatibleWith(pi, ci) &
 		hasMajorVersion(pi, ma) & hasMajorVersion(ci, ma) &
 		hasMinorVersion(pi, pm) & hasMinorVersion(ci, cm) &
-		builtIn(swrlb:lessThan, cm, pm)
+		builtIn(swrlb:lessThanOrEqual, cm, pm)
 		->
 		isCompatibleWith(pi, ci)
 	]

@@ -8,18 +8,88 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 
 	uses <http://opencaesar.io/if-compat/vocabulary/vocabulary1#> as vocabulary1
 
-	instance if1 : vocabulary1:ModuleProviderInterface [
+	instance t1if1 : vocabulary1:ModuleProviderInterface [
 		vocabulary1:hasInterfaceType "Type 1"
 		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "3"^^xsd:nonNegativeInteger
+	]
+	
+	instance t1if2 : vocabulary1:ModuleConsumerInterface [
+		vocabulary1:hasInterfaceType "Type 1"
+		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "3"^^xsd:nonNegativeInteger
+	]
+	
+	instance t1if3 : vocabulary1:ModuleConsumerInterface [
+		vocabulary1:hasInterfaceType "Type 1"
+		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "2"^^xsd:nonNegativeInteger
+	]
+	
+	instance t1if4 : vocabulary1:ModuleConsumerInterface [
+		vocabulary1:hasInterfaceType "Type 1"
+		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "0"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "9"^^xsd:nonNegativeInteger
+	]
+	
+	instance t1if5 : vocabulary1:ModuleConsumerInterface [
+		vocabulary1:hasInterfaceType "Type 1"
+		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "0"^^xsd:nonNegativeInteger
 	]
 	
-	instance if2 : vocabulary1:ModuleProviderInterface [
+	instance t1if6 : vocabulary1:ModuleConsumerInterface [
 		vocabulary1:hasInterfaceType "Type 1"
+		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "0"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "9"^^xsd:nonNegativeInteger
+	]
+	
+	instance t2if1 : vocabulary1:ModuleProviderInterface [
+		vocabulary1:hasInterfaceType "Type 2"
 		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "3"^^xsd:nonNegativeInteger
+	]
+	
+	instance t2if2 : vocabulary1:ModuleConsumerInterface [
+		vocabulary1:hasInterfaceType "Type 2"
+		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "3"^^xsd:nonNegativeInteger
+	]
+	
+	instance t2if3 : vocabulary1:ModuleConsumerInterface [
+		vocabulary1:hasInterfaceType "Type 2"
+		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "2"^^xsd:nonNegativeInteger
+	]
+	
+	instance t2if4 : vocabulary1:ModuleConsumerInterface [
+		vocabulary1:hasInterfaceType "Type 2"
+		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "0"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "9"^^xsd:nonNegativeInteger
+	]
+	
+	instance t2if5 : vocabulary1:ModuleConsumerInterface [
+		vocabulary1:hasInterfaceType "Type 2"
+		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "0"^^xsd:nonNegativeInteger
+	]
+	
+	instance t2if6 : vocabulary1:ModuleConsumerInterface [
+		vocabulary1:hasInterfaceType "Type 2"
+		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "0"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "9"^^xsd:nonNegativeInteger
 	]
 	
 }
