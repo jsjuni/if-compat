@@ -1,0 +1,10 @@
+PREFIX vocabulary1:   <http://opencaesar.io/if-compat/vocabulary/vocabulary1#>
+
+SELECT ?pi ?ci
+
+WHERE {
+  ?pi a vocabulary1:ProviderInterface .
+  ?ci a vocabulary1:ConsumerInterface .
+  ?pi vocabulary1:isCompatibleWith ?ci .
+}
+ORDER BY ?pi ?ci

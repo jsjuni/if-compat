@@ -73,11 +73,11 @@ vocabulary <http://opencaesar.io/if-compat/vocabulary/vocabulary1#> as vocabular
 		restricts all mission:isPresentedBy to Module
 	]
 	
-	concept ModuleProviderInterface < ProviderInterface [
+	concept ServiceProviderInterface < ProviderInterface [
 		restricts all mission:isPresentedBy to Module
 	]
 	
-	concept ModuleConsumerInterface < ConsumerInterface [
+	concept ServiceConsumerInterface < ConsumerInterface [
 		restricts all mission:isPresentedBy to Module
 	]
 	
@@ -105,6 +105,14 @@ vocabulary <http://opencaesar.io/if-compat/vocabulary/vocabulary1#> as vocabular
 		builtIn(swrlb:lessThanOrEqual, cm, pm)
 		->
 		isCompatibleWith(pi, ci)
+	]
+	
+	rule CompatiblePlatformsAndModules [
+		Platform(p) & mission:presents(p, pi) &
+		Module(m) & mission:presents(m, mi) &
+		isCompatibleWith(pi, mi)
+		->
+		isCompatibleWith(p, m)
 	]
 	
 }
