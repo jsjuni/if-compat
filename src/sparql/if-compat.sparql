@@ -1,11 +1,22 @@
+PREFIX base:       <http://imce.jpl.nasa.gov/foundation/base#>
 PREFIX vocabulary1:   <http://opencaesar.io/if-compat/vocabulary/vocabulary1#>
 
-SELECT ?pi ?ci ?type
+SELECT ?type ?pi_name ?pi_version ?ci_name ?ci_version
 
 WHERE {
   ?pi a vocabulary1:ProviderInterface ;
-  	  vocabulary1:hasInterfaceType ?type .
-  ?ci a vocabulary1:ConsumerInterface .
+  	  base:hasAlternateName ?pi_name ;
+  	  vocabulary1:hasInterfaceType ?type ;
+  	  vocabulary1:hasMajorVersion ?pi_ma ;
+  	  vocabulary1:hasMinorVersion ?pi_mi ;
+  	  vocabulary1:hasPatchVersion ?pi_pa .
+  ?ci a vocabulary1:ConsumerInterface ;
+      base:hasAlternateName ?ci_name ;
+  	  vocabulary1:hasMajorVersion ?ci_ma ;
+  	  vocabulary1:hasMinorVersion ?ci_mi ;
+  	  vocabulary1:hasPatchVersion ?ci_pa .
   ?pi vocabulary1:isCompatibleWith ?ci .
+  BIND(CONCAT(STR(?pi_ma), ".", STR(?pi_mi), ".", STR(?pi_pa)) AS ?pi_version)
+  BIND(CONCAT(STR(?ci_ma), ".", STR(?ci_mi), ".", STR(?ci_pa)) AS ?ci_version)
 }
-ORDER BY ?pi ?ci
+ORDER BY ?pi_name ?ci_name

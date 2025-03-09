@@ -1,11 +1,14 @@
+PREFIX base:       <http://imce.jpl.nasa.gov/foundation/base#>
 PREFIX mission:       <http://imce.jpl.nasa.gov/foundation/mission#>
 PREFIX vocabulary1:   <http://opencaesar.io/if-compat/vocabulary/vocabulary1#>
 
-SELECT ?p ?m
+SELECT ?p_name ?m_name
 
 WHERE {
-  ?p a vocabulary1:Platform .
-  ?m a vocabulary1:Module .
+  ?p a vocabulary1:Platform ;
+  	base:hasAlternateName ?p_name .
+  ?m a vocabulary1:Module ;
+  	base:hasAlternateName ?m_name .
   ?p vocabulary1:isCompatibleWith ?m .
 }
-ORDER BY ?p ?m
+ORDER BY ?p_name ?m_name

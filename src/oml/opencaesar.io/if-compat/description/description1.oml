@@ -6,6 +6,7 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	uses <http://purl.org/dc/elements/1.1/> as dc
 	uses <http://www.w3.org/2001/XMLSchema#> as xsd
 
+	uses <http://imce.jpl.nasa.gov/foundation/base#> as base
 	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
 
 	uses <http://opencaesar.io/if-compat/vocabulary/vocabulary1#> as vocabulary1
@@ -19,12 +20,14 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	// Platforms p1 and p2 are legacy platforms at version 1.2.5.
 	
 	instance p1 : vocabulary1:Platform [
+		base:hasAlternateName "Platform 1"
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "5"^^xsd:nonNegativeInteger
 	]
 	
 	instance p1i1 : vocabulary1:PlatformProviderInterface [
+		base:hasAlternateName "Platform 1 Interface 1"
 		vocabulary1:hasInterfaceType "Platform"
 		mission:isPresentedBy p1
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
@@ -33,12 +36,14 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance p2 : vocabulary1:Platform [
+		base:hasAlternateName "Platform 2"
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "5"^^xsd:nonNegativeInteger
 	]
 	
 	instance p2i1 : vocabulary1:PlatformProviderInterface [
+		base:hasAlternateName "Platform 2 Interface 1"
 		vocabulary1:hasInterfaceType "Platform"
 		mission:isPresentedBy p2
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
@@ -49,12 +54,14 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	// Platforms p3 and p4 are upgraded platforms at version 1.7.2. 
 	
 	instance p3 : vocabulary1:Platform [
+		base:hasAlternateName "Platform 3"
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "7"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "2"^^xsd:nonNegativeInteger
 	]
 	
 	instance p3i1 : vocabulary1:PlatformProviderInterface [
+		base:hasAlternateName "Platform 3 Interface 1"
 		vocabulary1:hasInterfaceType "Platform"
 		mission:isPresentedBy p3
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
@@ -63,12 +70,14 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance p4 : vocabulary1:Platform [
+		base:hasAlternateName "Platform 4"
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "7"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "2"^^xsd:nonNegativeInteger
 	]
 	
 	instance p4i1 : vocabulary1:PlatformProviderInterface [
+		base:hasAlternateName "Platform 4 Interface 1"
 		vocabulary1:hasInterfaceType "Platform"
 		mission:isPresentedBy p4
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
@@ -79,12 +88,14 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	// Platforms p5 and p6 are next generation platforms at version 2.1.1.
 	
 	instance p5 : vocabulary1:Platform [
+		base:hasAlternateName "Platform 5"
 		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "1"^^xsd:nonNegativeInteger
 	]
 	
 	instance p5i1 : vocabulary1:PlatformProviderInterface [
+		base:hasAlternateName "Platform 5 Interface 1"
 		vocabulary1:hasInterfaceType "Platform"
 		mission:isPresentedBy p5
 		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
@@ -93,12 +104,14 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance p6 : vocabulary1:Platform [
+		base:hasAlternateName "Platform 6"
 		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "1"^^xsd:nonNegativeInteger
 	]
 	
 	instance p6i1 : vocabulary1:PlatformProviderInterface [
+		base:hasAlternateName "Platform 6 Interface 1"
 		vocabulary1:hasInterfaceType "Platform"
 		mission:isPresentedBy p6
 		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
@@ -115,12 +128,14 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	// Modules m1 and m2 are legacy modules at version 1.2.3 and 1.2.4.
 	
 	instance m1 : vocabulary1:Module [
+		base:hasAlternateName "Module 1"
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "3"^^xsd:nonNegativeInteger
 	]
 
 	instance m1i1 : vocabulary1:PlatformConsumerInterface [
+		base:hasAlternateName "Module 1 Interface 1"
 		vocabulary1:hasInterfaceType "Platform"
 		mission:isPresentedBy m1
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
@@ -129,6 +144,7 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m1i2 : vocabulary1:ServiceProviderInterface [
+		base:hasAlternateName "Module 1 Interface 2"
 		vocabulary1:hasInterfaceType "Service 1"
 		mission:isPresentedBy m1
 		vocabulary1:hasMajorVersion "7"^^xsd:nonNegativeInteger
@@ -137,6 +153,7 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m1i3 : vocabulary1:ServiceConsumerInterface [
+		base:hasAlternateName "Module 1 Interface 3"
 		vocabulary1:hasInterfaceType "Service 2"
 		mission:isPresentedBy m1
 		vocabulary1:hasMajorVersion "4"^^xsd:nonNegativeInteger
@@ -145,6 +162,7 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m1i4 : vocabulary1:ServiceConsumerInterface [
+		base:hasAlternateName "Module 1 Interface 4"
 		vocabulary1:hasInterfaceType "Service 3"
 		mission:isPresentedBy m1
 		vocabulary1:hasMajorVersion "0"^^xsd:nonNegativeInteger
@@ -153,6 +171,7 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m1i5 : vocabulary1:ServiceProviderInterface [
+		base:hasAlternateName "Module 1 Interface 5"
 		vocabulary1:hasInterfaceType "Service 4"
 		mission:isPresentedBy m1
 		vocabulary1:hasMajorVersion "0"^^xsd:nonNegativeInteger
@@ -161,12 +180,14 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m2 : vocabulary1:Module [
+		base:hasAlternateName "Module 2"
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "4"^^xsd:nonNegativeInteger
 	]
 
 	instance m2i1 : vocabulary1:PlatformConsumerInterface [
+		base:hasAlternateName "Module 2 Interface 1"
 		vocabulary1:hasInterfaceType "Platform"
 		mission:isPresentedBy m2
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
@@ -175,6 +196,7 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m2i2 : vocabulary1:ServiceConsumerInterface [
+		base:hasAlternateName "Module 2 Interface 2"
 		vocabulary1:hasInterfaceType "Service 1"
 		mission:isPresentedBy m2
 		vocabulary1:hasMajorVersion "7"^^xsd:nonNegativeInteger
@@ -183,6 +205,7 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m2i3 : vocabulary1:ServiceProviderInterface [
+		base:hasAlternateName "Module 2 Interface 3"
 		vocabulary1:hasInterfaceType "Service 2"
 		mission:isPresentedBy m2
 		vocabulary1:hasMajorVersion "4"^^xsd:nonNegativeInteger
@@ -193,12 +216,14 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	// Modules m3 and m4 are upgraded modules at version 1.7.1 and 1.7.2. 
 	
 	instance m3 : vocabulary1:Module [
+		base:hasAlternateName "Module 3"
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "7"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "1"^^xsd:nonNegativeInteger
 	]
 
 	instance m3i1 : vocabulary1:PlatformConsumerInterface [
+		base:hasAlternateName "Module 3 Interface 1"
 		vocabulary1:hasInterfaceType "Platform"
 		mission:isPresentedBy m3
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
@@ -207,6 +232,7 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m3i2 : vocabulary1:ServiceConsumerInterface [
+		base:hasAlternateName "Module 3 Interface 2"
 		vocabulary1:hasInterfaceType "Service 1"
 		mission:isPresentedBy m3
 		vocabulary1:hasMajorVersion "7"^^xsd:nonNegativeInteger
@@ -215,6 +241,7 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m3i3 : vocabulary1:ServiceProviderInterface [
+		base:hasAlternateName "Module 3 Interface 3"
 		vocabulary1:hasInterfaceType "Service 2"
 		mission:isPresentedBy m3
 		vocabulary1:hasMajorVersion "4"^^xsd:nonNegativeInteger
@@ -223,12 +250,14 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m4 : vocabulary1:Module [
+		base:hasAlternateName "Module 4"
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "7"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "2"^^xsd:nonNegativeInteger
 	]
 
 	instance m4i1 : vocabulary1:PlatformConsumerInterface [
+		base:hasAlternateName "Module 4 Interface 1"
 		vocabulary1:hasInterfaceType "Platform"
 		mission:isPresentedBy m4
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
@@ -237,6 +266,7 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m4i2 : vocabulary1:ServiceProviderInterface [
+		base:hasAlternateName "Module 4 Interface 2"
 		vocabulary1:hasInterfaceType "Service 1"
 		mission:isPresentedBy m4
 		vocabulary1:hasMajorVersion "7"^^xsd:nonNegativeInteger
@@ -247,12 +277,14 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	// Modules m5 and m6 are next generation modules at version 2.1.1.
 	
 	instance m5 : vocabulary1:Module [
+		base:hasAlternateName "Module 5"
 		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "1"^^xsd:nonNegativeInteger
 	]
 	
 	instance m5i1 : vocabulary1:PlatformConsumerInterface [
+		base:hasAlternateName "Module 5 Interface 1"
 		vocabulary1:hasInterfaceType "Platform"
 		mission:isPresentedBy m5
 		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
@@ -261,6 +293,7 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m5i2 : vocabulary1:ServiceConsumerInterface [
+		base:hasAlternateName "Module 5 Interface 2"
 		vocabulary1:hasInterfaceType "Service 1"
 		mission:isPresentedBy m5
 		vocabulary1:hasMajorVersion "8"^^xsd:nonNegativeInteger
@@ -269,12 +302,14 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m6 : vocabulary1:Module [
+		base:hasAlternateName "Module 6"
 		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "1"^^xsd:nonNegativeInteger
 	]
 	
 	instance m6i1 : vocabulary1:PlatformConsumerInterface [
+		base:hasAlternateName "Module 6 Interface 1"
 		vocabulary1:hasInterfaceType "Platform"
 		mission:isPresentedBy m6
 		vocabulary1:hasMajorVersion "2"^^xsd:nonNegativeInteger
@@ -283,6 +318,7 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 	]
 	
 	instance m6i2 : vocabulary1:ServiceProviderInterface [
+		base:hasAlternateName "Module 6 Interface 2"
 		vocabulary1:hasInterfaceType "Service 1"
 		mission:isPresentedBy m6
 		vocabulary1:hasMajorVersion "8"^^xsd:nonNegativeInteger
