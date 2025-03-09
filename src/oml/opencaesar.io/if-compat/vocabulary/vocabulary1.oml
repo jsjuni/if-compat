@@ -123,5 +123,13 @@ vocabulary <http://opencaesar.io/if-compat/vocabulary/vocabulary1#> as vocabular
 		isCompatibleWith(m1, m2)
 	]
 	
+	rule CompatiblePlatforms [
+		Platform(p1) & isCompatibleWith(p1, m1) &
+		Platform(p2) & isCompatibleWith(p2, m2) &
+		isCompatibleWith(m1, m2)
+		->
+		isCompatibleWith(p1, p2)
+	]
+	
 }
 
