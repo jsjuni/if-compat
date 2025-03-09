@@ -206,6 +206,22 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 		vocabulary1:hasPatchVersion "1"^^xsd:nonNegativeInteger
 	]
 	
+	instance m3i2 : vocabulary1:ServiceConsumerInterface [
+		vocabulary1:hasInterfaceType "Service 1"
+		mission:isPresentedBy m3
+		vocabulary1:hasMajorVersion "7"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "5"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "2"^^xsd:nonNegativeInteger
+	]
+	
+	instance m3i3 : vocabulary1:ServiceProviderInterface [
+		vocabulary1:hasInterfaceType "Service 2"
+		mission:isPresentedBy m2
+		vocabulary1:hasMajorVersion "4"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "15"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "8"^^xsd:nonNegativeInteger
+	]
+	
 	instance m4 : vocabulary1:Module [
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "7"^^xsd:nonNegativeInteger
