@@ -128,6 +128,38 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 		vocabulary1:hasPatchVersion "3"^^xsd:nonNegativeInteger
 	]
 	
+	instance m1i2 : vocabulary1:ServiceProviderInterface [
+		vocabulary1:hasInterfaceType "Service 1"
+		mission:isPresentedBy m1
+		vocabulary1:hasMajorVersion "7"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "8"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "3"^^xsd:nonNegativeInteger
+	]
+	
+	instance m1i3 : vocabulary1:ServiceConsumerInterface [
+		vocabulary1:hasInterfaceType "Service 2"
+		mission:isPresentedBy m1
+		vocabulary1:hasMajorVersion "4"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "9"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "1"^^xsd:nonNegativeInteger
+	]
+	
+	instance m1i4 : vocabulary1:ServiceConsumerInterface [
+		vocabulary1:hasInterfaceType "Service 3"
+		mission:isPresentedBy m1
+		vocabulary1:hasMajorVersion "0"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "1"^^xsd:nonNegativeInteger
+	]
+	
+	instance m1i5 : vocabulary1:ServiceProviderInterface [
+		vocabulary1:hasInterfaceType "Service 4"
+		mission:isPresentedBy m1
+		vocabulary1:hasMajorVersion "0"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "1"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "1"^^xsd:nonNegativeInteger
+	]
+	
 	instance m2 : vocabulary1:Module [
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "2"^^xsd:nonNegativeInteger
@@ -140,6 +172,22 @@ description <http://opencaesar.io/if-compat/description/description1#> as descri
 		vocabulary1:hasMajorVersion "1"^^xsd:nonNegativeInteger
 		vocabulary1:hasMinorVersion "2"^^xsd:nonNegativeInteger
 		vocabulary1:hasPatchVersion "3"^^xsd:nonNegativeInteger
+	]
+	
+	instance m2i2 : vocabulary1:ServiceConsumerInterface [
+		vocabulary1:hasInterfaceType "Service 1"
+		mission:isPresentedBy m2
+		vocabulary1:hasMajorVersion "7"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "6"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "0"^^xsd:nonNegativeInteger
+	]
+	
+	instance m2i3 : vocabulary1:ServiceProviderInterface [
+		vocabulary1:hasInterfaceType "Service 2"
+		mission:isPresentedBy m2
+		vocabulary1:hasMajorVersion "4"^^xsd:nonNegativeInteger
+		vocabulary1:hasMinorVersion "10"^^xsd:nonNegativeInteger
+		vocabulary1:hasPatchVersion "0"^^xsd:nonNegativeInteger
 	]
 	
 	// Modules p3 and p4 are upgraded modules at version 1.7.1 and 1.7.2. 

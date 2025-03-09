@@ -1,11 +1,11 @@
 PREFIX vocabulary1:   <http://opencaesar.io/if-compat/vocabulary/vocabulary1#>
 
-SELECT ?pi ?ci ?type
+SELECT ?pi ?type
 
 WHERE {
   ?pi a vocabulary1:ProviderInterface ;
   	  vocabulary1:hasInterfaceType ?type .
-  ?ci a vocabulary1:ConsumerInterface .
-  ?pi vocabulary1:isCompatibleWith ?ci .
+  NOT EXISTS {
+  	?ci vocabulary1:isCompatibleWith ?pi .
+  }
 }
-ORDER BY ?pi ?ci

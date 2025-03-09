@@ -1,0 +1,11 @@
+PREFIX vocabulary1:   <http://opencaesar.io/if-compat/vocabulary/vocabulary1#>
+
+SELECT ?ci ?type
+
+WHERE {
+  ?ci a vocabulary1:ConsumerInterface ;
+  	  vocabulary1:hasInterfaceType ?type .
+  NOT EXISTS {
+  	?pi vocabulary1:isCompatibleWith ?ci.
+  }
+}

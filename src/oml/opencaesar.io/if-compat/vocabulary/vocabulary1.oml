@@ -115,5 +115,13 @@ vocabulary <http://opencaesar.io/if-compat/vocabulary/vocabulary1#> as vocabular
 		isCompatibleWith(p, m)
 	]
 	
+	rule CompatibleModules [
+		Module(m1) & mission:presents(m1, i1) &
+		Module(m2) & mission:presents(m2, i2) &
+		isCompatibleWith(i1, i2)
+		->
+		isCompatibleWith(m1, m2)
+	]
+	
 }
 
