@@ -1,16 +1,19 @@
 PREFIX base:       <http://imce.jpl.nasa.gov/foundation/base#>
+PREFIX mission:       <http://imce.jpl.nasa.gov/foundation/mission#>
 PREFIX vocabulary1:   <http://opencaesar.io/if-compat/vocabulary/vocabulary1#>
 
-SELECT ?type ?pi_name ?pi_version ?ci_name ?ci_version
+SELECT ?type ?pi_module ?pi_name ?pi_version ?ci_module ?ci_name ?ci_version
 
 WHERE {
   ?pi a vocabulary1:ProviderInterface ;
+  	  mission:isPresentedBy [ base:hasAlternateName ?pi_module ] ;
   	  base:hasAlternateName ?pi_name ;
   	  vocabulary1:hasInterfaceType ?type ;
   	  vocabulary1:hasMajorVersion ?pi_ma ;
   	  vocabulary1:hasMinorVersion ?pi_mi ;
   	  vocabulary1:hasPatchVersion ?pi_pa .
   ?ci a vocabulary1:ConsumerInterface ;
+  	  mission:isPresentedBy [ base:hasAlternateName ?ci_module ] ;
       base:hasAlternateName ?ci_name ;
   	  vocabulary1:hasMajorVersion ?ci_ma ;
   	  vocabulary1:hasMinorVersion ?ci_mi ;
